@@ -1,0 +1,47 @@
+export default {
+    env: process.env.NODE_ENV || 'development',
+    PORT: process.env.PORT ? Number(process.env.PORT) : 3000,
+    ACCESS_TOKEN_SECRET: process.env.ACCESS_TOKEN_SECRET || '',
+    REFRESH_TOKEN_SECRET: process.env.REFRESH_TOKEN_SECRET || '',
+    ACCESS_TOKEN_EXPIRES_IN: process.env.ACCESS_TOKEN_EXPIRES_IN || '1d',
+    USE_LOG_FILE: Boolean(process.env.USE_LOG_FILE),
+    PAGE_SIZE: process.env.PAGE_SIZE ? Number(process.env.PAGE_SIZE) : 25,
+    MAX_PAGE_SIZE: process.env.MAX_PAGE_SIZE ? Number(process.env.MAX_PAGE_SIZE) : 100,
+    GCP_ACCOUNT_FILE: process.env.GCP_ACCOUNT_FILE,
+    GCP_PROJECT_ID: process.env.GCP_PROJECT_ID,
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY || '',
+    EMAIL_SENDER_NAME: process.env.EMAIL_SENDER_NAME || 'PAGEVAL',
+    EMAIL_SENDER: process.env.EMAIL_SENDER || 'noreply@eval.pag.com',
+    PUPPETEER_TOKEN: process.env.PUPPETEER_TOKEN || 'a91699ed-b4b9-48d7-b05a-09985a135223',
+    PDF_WORK_FOLDER: './',
+    EXCEL_WORK_FOLDER: './',
+    REMINDER_TEMPLATE_KEY: {
+        LOC_APPROVAL: process.env.LOC_APPROVAL_TEMPLATE_KEY || 'loc-approval',
+        MISSING_FORMS: process.env.MISSING_FORMS_TEMPLATE_KEY || 'missing-forms',
+        MISSING_EVALUATIONS: process.env.MISSING_EVALUATIONS_TEMPLATE_KEY || 'missing-evaluations',
+        REVIEW_PS: process.env.REVIEW_PS_TEMPLATE_KEY || 'review-ps',
+        LOC_TO_COMPLETE: process.env.LOC_TO_COMPLETE_TEMPLATE_KEY || 'loc-to-complete',
+        SHARE_PS_BRIEF: process.env.SHARE_PS_TEMPLATE_KEY || 'share-ps-brief',
+        SHARE_PS_FULL: process.env.SHARE_PS_FULL_TEMPLATE_KEY || 'share-ps-full',
+        SA_TO_COMPLETE: process.env.SA_TO_COMPLETE_TEMPLATE_KEY || 'sa-to-complete',
+    },
+    MAILTRAP: {
+        host: 'smtp.mailtrap.io',
+        port: 2525,
+        auth: {
+            user: process.env.MAIL_TRAP_USER || 'd9220038cbb8f8',
+            pass: process.env.MAIL_TRAP_PASS || '991fb4f9094b82',
+        },
+    },
+    LDAP: {
+        url: process.env.LDAP_URL || 'ldap://192.168.210.31:389',
+        filter: process.env.LDAP_FILTER || '(&(objectClass=user)(|(mail={{username}})(proxyAddresses=*:{{username}})))',
+        bindDN: process.env.LDAP_BIND_DN || 'hkevalldap@pag.com',
+        bindCredentials: process.env.LDAP_BIND_CREDENTIALS || 'W3lcome',
+        searchBase: process.env.LDAP_SEARCH_BASE || 'DC=paghk,DC=local',
+    },
+    FOREST: {
+        envSecret: process.env.FOREST_ENV_SECRET || '',
+        authSecret: process.env.FOREST_AUTH_SECRET || '',
+    }
+};

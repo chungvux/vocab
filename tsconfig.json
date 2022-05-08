@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    "target": "es2018" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "lib": [
+      "es2018",
+      "esnext.asynciterable"
+    ] /* Specify a set of bundled library declaration files that describe the target runtime environment. */,
+    "experimentalDecorators": true /* Enable experimental support for TC39 stage 2 draft decorators. */,
+    "emitDecoratorMetadata": true /* Emit design-type metadata for decorated declarations in source files. */,
+    "module": "commonjs",
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "baseUrl": "src/",
+    "paths": {
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@bootstrap/*": [
+        "bootstrap/*"
+      ],
+      "@middlewares/*": [
+        "middlewares/*"
+      ],
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@customtypes/*": [
+        "types/*"
+      ],
+      "@rest/*": [
+        "rest/*"
+      ]
+    },
+    "rootDirs": [
+      "src",
+      "seeds"
+    ] /* Allow multiple folders to be treated as one when resolving modules. */,
+    "outDir": "dist/" /* Specify an output folder for all emitted files. */,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "./node_modules/**/*",
+    "./seeds/**/*"
+  ]
+}
